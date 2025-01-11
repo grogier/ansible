@@ -1,4 +1,0 @@
-# pings all hosts. must be run from the inventory folder
-
-ansible all -i hosts -m ping
-

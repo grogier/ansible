@@ -1,3 +1,4 @@
+# Playbook to update and upgrade apt packages on all hosts
 - hosts: all
   become: yes
   tasks:
@@ -5,4 +6,6 @@
     apt:
       upgrade: yes
       update_cache: yes
-      cache_valid_time: 86400 
+      cache_valid_time: 86400  # cache_valid_time is in seconds
+
+

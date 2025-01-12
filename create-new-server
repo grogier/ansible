@@ -7,7 +7,7 @@
             community.general.proxmox_kvm:
                 api_host: "10.0.0.101"
                 api_user: "root@pam"
-                api_password: "proxy2vis3banaan4"
+                api_password: ""
                 api_validate_certs: no
                 node: "nuc12"
                 clone: 8002

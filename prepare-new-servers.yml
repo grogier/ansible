@@ -1,0 +1,30 @@
+# Playbook to update and upgrade apt packages new hosts.  also, qemu-guest-agent is installed. when the qemu package is installed, the machine is rebooted.
+
+
+
+
+    - hosts: k3s
+      become: yes
+      #become_user: rogier
+      tasks:
+      - name: Update and upgrade apt packages
+        apt:
+          upgrade: yes
+          update_cache: yes
+          cache_valid_time: 86400  # cache_valid_time is in seconds
+        register: apt_result
+    
+      - name: Install qemu-guest-agent
+        apt:
+          name: qemu-guest-agent
+          state: present
+        register: qemu_result
+    
+      - name: Reboot the machine if needed
+        reboot:
+          msg: "Reboot initiated by Ansible"
+          connect_timeout: 5
+          reboot_timeout: 600
+          pre_reboot_delay: 0
+          post_reboot_delay: 30
+        when: qemu_result.changed

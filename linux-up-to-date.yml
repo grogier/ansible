@@ -1,6 +1,7 @@
 # Playbook to update and upgrade apt packages on all hosts
 - hosts: all
   become: yes
+  #become_user: rogier
   tasks:
   - name: Update and upgrade apt packages
     apt:

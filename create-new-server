@@ -1,0 +1,21 @@
+---
+- name: Create new VM in Proxmox
+    hosts: localhost
+    gather_facts: no
+    tasks:
+        - name: Create new VM from template
+            community.general.proxmox_kvm:
+                api_host: "10.0.0.101"
+                api_user: "root@pam"
+                api_password: "proxy2vis3banaan4"
+                api_validate_certs: no
+                node: "nuc12"
+                clone: 8002
+                name: "test-ansible"
+                vmid: 401
+                full: yes
+                wait: yes
+                timeout: 300
+                cloudinit: 
+                    ipconfig0: "ip=192.168.1.100/24,gw=192.168.1.1"
+                state: present

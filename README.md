@@ -45,4 +45,6 @@ ansible-playbook linux-up-to-date.yml
 ```
 
 
+## installing certificate to any host
 
+rogier@Rogier-PC-2024:~/ansible/.ssh$ ssh-copy-id -i semaphore_rsa.pub rogier@10.0.0.112

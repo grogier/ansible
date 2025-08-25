@@ -1,10 +1,7 @@
-# Playbook to update and upgrade apt packages on all hosts
+# get info about hosts 
 - hosts: all
   become: yes
-  #become_user: rogier
   tasks:
-
-
   - name: Display hostname
     debug:
       msg: "The hostname is {{ ansible_hostname }}"

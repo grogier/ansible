@@ -4,9 +4,7 @@
   #become_user: rogier
   tasks:
 
-  - name: Get hostname of selected hosts
-    hosts: your_host_group_or_selection
-    tasks:
-      - name: Display hostname
-        debug:
-          msg: "The hostname is {{ ansible_hostname }}"
+
+  - name: Display hostname
+    debug:
+      msg: "The hostname is {{ ansible_hostname }}"

@@ -8,5 +8,7 @@
       upgrade: yes
       update_cache: yes
       cache_valid_time: 86400  # cache_valid_time is in seconds
+    async: 900  # Maximum time allowed in seconds (15 minutes)
+    poll: 10    # Checks status every 10 seconds
 
 
